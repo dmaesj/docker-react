@@ -13,5 +13,7 @@ RUN npm run build
 
 #Start Final prod container
 FROM nginx
+#Expose server port
+EXPOSE 80
 #Copy build folder into new image (nginx static folder)
 COPY --from=builder /app/build /usr/share/nginx/html
